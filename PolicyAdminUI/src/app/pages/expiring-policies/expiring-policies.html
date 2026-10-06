@@ -1,0 +1,97 @@
+<div class="d-flex justify-content-between mb-4">
+
+    <h2>
+      Expiring Policies
+    </h2>
+  
+    <button
+      class="btn btn-primary"
+      (click)="loadPolicies()">
+  
+      Refresh
+  
+    </button>
+  
+  </div>
+  
+  <div
+    *ngIf="errorMessage"
+    class="alert alert-danger">
+  
+    {{ errorMessage }}
+  
+  </div>
+  
+  <div class="card p-3">
+  
+    <table
+      class="table table-bordered"
+      *ngIf="policies.length > 0">
+  
+      <thead>
+  
+        <tr>
+          <th>Policy Number</th>
+          <th>Customer</th>
+          <th>Pet</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+  
+      </thead>
+  
+      <tbody>
+  
+        <tr *ngFor="let policy of policies">
+  
+          <td>
+            {{ policy.policyNumber }}
+          </td>
+  
+          <td>
+            {{ policy.customerName }}
+          </td>
+  
+          <td>
+            {{ policy.petName }}
+          </td>
+  
+          <td>
+            {{ policy.endDate | date:'dd-MM-yyyy' }}
+          </td>
+  
+          <td>
+            {{ policy.status }}
+          </td>
+  
+          <td>
+  
+            <a
+              class="btn btn-sm btn-outline-primary"
+              [routerLink]="[
+                '/policies',
+                policy.policyNumber
+              ]">
+  
+              View
+  
+            </a>
+  
+          </td>
+  
+        </tr>
+  
+      </tbody>
+  
+    </table>
+  
+    <div
+      *ngIf="!loading && policies.length === 0"
+      class="alert alert-warning">
+  
+      No expiring policies found.
+  
+    </div>
+  
+  </div>

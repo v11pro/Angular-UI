@@ -1,0 +1,76 @@
+<div class="container-fluid">
+
+    <h2 class="mb-4">Policies</h2>
+  
+    <div *ngIf="loading" class="alert alert-info">
+      Loading policies...
+    </div>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <div *ngIf="!loading && policies.length > 0" class="table-responsive">
+  
+      <table class="table table-bordered table-hover">
+  
+        <thead>
+          <tr>
+            <th>Policy Number</th>
+            <th>Customer</th>
+            <th>Pet</th>
+            <th>Premium</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+  
+          <tr *ngFor="let policy of policies">
+  
+            <td>
+              {{ policy.policyNumber }}
+            </td>
+  
+            <td>
+              {{ policy.customerName }}
+            </td>
+  
+            <td>
+              {{ policy.petName }}
+            </td>
+  
+            <td>
+              {{ policy.premium }}
+            </td>
+  
+            <td>
+              {{ policy.status }}
+            </td>
+  
+            <td>
+              <a
+                [routerLink]="['/policies', policy.policyNumber]"
+                class="btn btn-sm btn-primary">
+                View
+              </a>
+            </td>
+  
+          </tr>
+  
+        </tbody>
+  
+      </table>
+  
+    </div>
+  
+    <div
+      *ngIf="!loading && policies.length === 0 && !errorMessage"
+      class="alert alert-warning">
+  
+      No policies found.
+  
+    </div>
+  
+  </div>

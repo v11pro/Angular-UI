@@ -1,0 +1,70 @@
+<h2 class="mb-4">
+    Renew Policy
+  </h2>
+  
+  <div
+    *ngIf="errorMessage"
+    class="alert alert-danger">
+  
+    {{ errorMessage }}
+  
+  </div>
+  
+  <form
+    [formGroup]="form"
+    (ngSubmit)="submit()">
+  
+    <div class="card p-4">
+  
+      <div class="mb-3">
+  
+        <label class="form-label">
+          Proposed Premium
+        </label>
+  
+        <input
+          type="number"
+          class="form-control"
+          formControlName="proposedPremium">
+  
+      </div>
+  
+      <div class="mb-3">
+  
+        <label class="form-label">
+          Extension Years
+        </label>
+  
+        <input
+          type="number"
+          class="form-control"
+          formControlName="extensionYears">
+  
+      </div>
+  
+      <div class="mb-3">
+  
+        <label class="form-label">
+          Notes
+        </label>
+  
+        <textarea
+          class="form-control"
+          rows="4"
+          formControlName="notes">
+        </textarea>
+  
+      </div>
+  
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="loading">
+  
+        {{ loading ? 'Renewing...' : 'Renew Policy' }}
+  
+      </button>
+  
+    </div>
+  
+  </form>

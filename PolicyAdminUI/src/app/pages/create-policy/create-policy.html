@@ -1,0 +1,195 @@
+<div class="container">
+
+    <h2 class="mb-4">Create Policy</h2>
+  
+    <div
+      *ngIf="errorMessage"
+      class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <div
+      *ngIf="successMessage"
+      class="alert alert-success">
+      {{ successMessage }}
+    </div>
+  
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit()">
+  
+      <div class="card p-4">
+  
+        <div class="row g-3">
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Approved Quote
+            </label>
+  
+            <select
+              class="form-select"
+              formControlName="quoteId"
+              (change)="selectQuote($event)">
+  
+              <option value="">
+                Select Quote
+              </option>
+  
+              <option
+                *ngFor="let quote of quotes"
+                [value]="quote.quoteId">
+  
+                {{ quote.quoteId }} -
+                {{ quote.customerName }}
+  
+              </option>
+  
+            </select>
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Policy Number
+            </label>
+  
+            <input
+              type="text"
+              class="form-control"
+              formControlName="policyNumber">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Start Date
+            </label>
+  
+            <input
+              type="date"
+              class="form-control"
+              formControlName="startDate">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              End Date
+            </label>
+  
+            <input
+              type="date"
+              class="form-control"
+              formControlName="endDate">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Payment Frequency
+            </label>
+  
+            <select
+              class="form-select"
+              formControlName="paymentFrequency">
+  
+              <option value="Monthly">Monthly</option>
+              <option value="Quarterly">Quarterly</option>
+              <option value="HalfYearly">Half Yearly</option>
+              <option value="Yearly">Yearly</option>
+  
+            </select>
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Annual Premium
+            </label>
+  
+            <input
+              type="number"
+              class="form-control"
+              formControlName="annualPremium">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Coverage Type
+            </label>
+  
+            <input
+              type="text"
+              class="form-control"
+              formControlName="coverageType">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Annual Limit
+            </label>
+  
+            <input
+              type="number"
+              class="form-control"
+              formControlName="annualLimit">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Deductible
+            </label>
+  
+            <input
+              type="number"
+              class="form-control"
+              formControlName="deductible">
+  
+          </div>
+  
+          <div class="col-md-6">
+  
+            <label class="form-label">
+              Reimbursement %
+            </label>
+  
+            <input
+              type="number"
+              class="form-control"
+              formControlName="reimbursementPct">
+  
+          </div>
+  
+        </div>
+  
+        <div class="mt-4">
+  
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="loading">
+  
+            {{ loading ? 'Creating...' : 'Create Policy' }}
+  
+          </button>
+  
+        </div>
+  
+      </div>
+  
+    </form>
+  
+  </div>
