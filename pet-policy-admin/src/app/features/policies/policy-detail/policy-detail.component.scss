@@ -1,0 +1,194 @@
+.policy-detail-page {
+  .detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .back-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #475569;
+        transition: all 0.15s ease;
+        &:hover { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+        .material-icons { font-size: 20px; }
+      }
+
+      .policy-title-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .policy-number {
+          font-size: 22px;
+          font-weight: 800;
+          color: #0f172a;
+          letter-spacing: -0.02em;
+        }
+      }
+
+      .policy-meta-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 4px;
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  .renewal-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+
+    .banner-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      .material-icons { font-size: 28px; }
+
+      strong { font-size: 14px; color: #92400e; display: block; }
+      p { font-size: 13px; color: #b45309; margin: 0; }
+    }
+  }
+
+  .info-section {
+    h3.section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+  }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 13.5px;
+
+    &:last-child { border-bottom: none; }
+
+    > span:first-child {
+      color: #64748b;
+      font-size: 13px;
+    }
+  }
+
+  .pet-card {
+    .pet-hero {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .pet-avatar-large {
+        font-size: 44px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+    }
+  }
+
+  .coverage-card {
+    margin-bottom: 16px;
+
+    .coverage-header {
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+    }
+
+    .coverage-metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      label {
+        font-size: 11.5px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #64748b;
+        letter-spacing: 0.04em;
+      }
+
+      strong {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .metric-note {
+        font-size: 11.5px;
+        color: #94a3b8;
+      }
+    }
+  }
+
+  .tx-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .notes-cell {
+    max-width: 350px;
+    color: #475569;
+    font-size: 13px;
+  }
+}
